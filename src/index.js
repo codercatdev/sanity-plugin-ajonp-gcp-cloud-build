@@ -16,7 +16,8 @@ class AjonpGcpCloudBuild extends React.Component {
     response: null,
     error: null,
     triggers: [],
-    accessToken: null
+    accessToken: null,
+    triggerMessage: null
   }
 
   constructor(props){
@@ -69,7 +70,12 @@ class AjonpGcpCloudBuild extends React.Component {
   }
 
   runTrigger = async(trigger, e) => {
-    console.log(trigger)
+    this.setState({
+      triggerMessage:{
+        message: 'Loading...',
+        error: false
+      }
+    })
     const response = await fetch(`https://cloudbuild.googleapis.com/v1/projects/${this.props.projectId}/triggers/${trigger.id}:run`, {
       method: 'post',
       headers:{
@@ -79,7 +85,12 @@ class AjonpGcpCloudBuild extends React.Component {
         branchName: trigger.github.push.branch.replace(/[^\w\s]/gi, '')
       })
     });
-    console.log(response);
+    const {name, metadata} = await response.json();
+    this.setState({
+      triggerMessage:{
+        message: `${name} - Status: ${metadata.build.status} - Branch: ${metadata.build.substitutions.BRANCH_NAME}`
+      }
+    })
   }
 
   render() {
@@ -117,6 +128,9 @@ class AjonpGcpCloudBuild extends React.Component {
               <Button onClick={(e) => this.runTrigger(trigger, e)}>Run</Button>
             </div>
           ))}
+          {this.state.triggerMessage && 
+            <p>{this.state.triggerMessage.message}</p>
+          }
         </div>
         <div className={styles.footer}>
           </div>

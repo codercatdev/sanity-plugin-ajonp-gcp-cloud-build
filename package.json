@@ -1,6 +1,6 @@
 {
   "name": "@ajonp/sanity-plugin-ajonp-gcp-cloud-build",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "author": "Alex Patterson <alex@ajonp.com>",
   "description": "Dashboard Widget for Google Cloud Platform Cloud Build",
   "homepage": "https://github.com/ajonp/sanity-plugin-ajonp-gcp-cloud-build#readme",
