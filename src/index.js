@@ -41,6 +41,9 @@ class AjonpGcpCloudBuild extends React.Component {
       accessToken: response.accessToken
     });
   }
+  responseGoogleError = async(response) => {
+    console.log(response);
+  }
   logout = () => {
     localStorage.removeItem('googleAuth');
     initialState();
@@ -100,7 +103,7 @@ class AjonpGcpCloudBuild extends React.Component {
               clientId={this.props.clientId}
               buttonText="Login"
               onSuccess={this.responseGoogle}
-              onFailure={this.responseGoogle}
+              onFailure={this.responseGoogleError}
               scope={this.props.scope}
               cookiePolicy={'single_host_origin'}
             />
