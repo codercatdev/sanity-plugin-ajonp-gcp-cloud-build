@@ -67,7 +67,7 @@ class AjonpGcpCloudBuild extends React.Component {
 
   runTrigger = async(trigger, e) => {
     console.log(trigger)
-    const response = await fetch(`https://cloudbuild.googleapis.com/v1/projects/${projectId}/triggers/${trigger.id}:run`, {
+    const response = await fetch(`https://cloudbuild.googleapis.com/v1/projects/${this.props.projectId}/triggers/${trigger.id}:run`, {
       method: 'post',
       headers:{
         'authorization': `Bearer ${this.state.accessToken}`
