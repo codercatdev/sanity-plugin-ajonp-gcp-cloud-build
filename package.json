@@ -1,0 +1,39 @@
+{
+  "name": "sanity-plugin-ajonp-gcp-cloud-build",
+  "version": "0.0.1",
+  "author": "Alex Patterson <alex@ajonp.com>",
+  "description": "Dashboard Widget for Google Cloud Platform Cloud Build",
+  "homepage": "https://github.com/ajonp/sanity-plugin-ajonp-gcp-cloud-build#readme",
+  "public": true,
+  "keywords": [
+    "sanity",
+    "pluign",
+    "part",
+    "dashboard",
+    "widget",
+    "ajonp"
+  ],
+  "main": "lib/index.js",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ajonp/sanity-plugin-ajonp-gcp-cloud-build/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ajonp/sanity-plugin-ajonp-gcp-cloud-build.git"
+  },
+  "peerDependencies": {
+    "prop-types": "^15.6 || ^16",
+    "react": "^16"
+  },
+  "sanityTemplate": {
+    "suggestedName": "sanity-plugin-ajonp-gcp-cloud-build",
+    "requiresConfig": true,
+    "minimumCliVersion": "0.140.0",
+    "minimumBaseVersion": "0.140.0",
+    "dependencies": {
+      "react-google-login": "^5.0.7"
+    }
+  }
+
+}
