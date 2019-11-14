@@ -1,6 +1,6 @@
 {
   "name": "@ajonp/sanity-plugin-ajonp-gcp-cloud-build",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "author": "Alex Patterson <alex@ajonp.com>",
   "description": "Dashboard Widget for Google Cloud Platform Cloud Build",
   "homepage": "https://github.com/ajonp/sanity-plugin-ajonp-gcp-cloud-build#readme",
@@ -49,5 +49,11 @@
   "scripts": {
     "build": "babel src -d lib --copy-files",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@atlaskit/button": "^13.3.4",
+    "gapi-script": "0.0.5",
+    "react-google-login": "^5.0.7",
+    "styled-components": "^4.4.1"
   }
 }
